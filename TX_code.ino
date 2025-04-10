@@ -5,7 +5,6 @@
 #define z A1
 
 char *data;
-//char output[10];
 
 int x_val;
 int y_val;
@@ -38,8 +37,6 @@ void loop()
   Serial.println(x_val);
   Serial.print("Y: ");
   Serial.println(y_val);
-  //Serial.print("      ");
-  //Serial.println(output);
   Serial.print("Z: ");
   Serial.println(z_val);
 
@@ -53,7 +50,6 @@ void loop()
     vw_send((uint8_t *)data, strlen(data));
     vw_wait_tx();
     delay(500);
-    //output={"F","o","r","w","a","r","d","\0"};
     Serial.println("Forward");
   }
   else if(y_axis <= -25)
@@ -62,7 +58,6 @@ void loop()
     vw_send((uint8_t *)data, strlen(data));
     vw_wait_tx();
     delay(500);
-    //output={"B","a","c","k","w","a","r","d","\0"};
     Serial.println("Backward");
   }
   else if(x_axis >= 25)
@@ -71,7 +66,6 @@ void loop()
     vw_send((uint8_t *)data, strlen(data));
     vw_wait_tx();
     delay(500);
-    //output={"R","i","g","h","t","\0"};
     Serial.println("Right");
   }
   else if(x_axis <= -25)
@@ -80,7 +74,6 @@ void loop()
     vw_send((uint8_t *)data, strlen(data));
     vw_wait_tx();
     delay(500);
-    //output={"L","e","f","t","\0"}
     Serial.println("Left");
   }
   else
@@ -89,7 +82,6 @@ void loop()
     vw_send((uint8_t *)data, strlen(data));
     vw_wait_tx();
     delay(500);
-    //output={"S","t","o","p","\0"}
     Serial.println("Stop");
   }
   Serial.println();
