@@ -45,7 +45,6 @@ void handleButtonPress() {
 
   if (digitalRead(buttonPin) == LOW) {
     if (!buttonWasPressed) {
-      delay(50); // debounce
       if (digitalRead(buttonPin) == LOW) {
         pressCount++;
         lastPressTime = millis();
